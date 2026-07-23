@@ -4,8 +4,8 @@ title: "설산의 산악도서"
 description: "산악도서를 소개하는 공간입니다."
 logo: 'assets/images/logo3.png'
 favicon: 'assets/images/logo3.png'
-baseurl: ""
-url: https://yunbook.mt8848.kr
+baseurl: "/yunBook"
+url: https://sansonyeo.github.io
 google_analytics: 'G-KFVVEDDKRB'
 disqus: ''
 # Utterances (GitHub Issues 기반 댓글). repo 에 utterances 앱 설치 필요: https://github.com/apps/utterances
