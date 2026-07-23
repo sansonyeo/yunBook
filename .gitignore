@@ -1,0 +1,21 @@
+# Jekyll build output
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Stray build artifacts
+site/
+
+# Backups
+*.bak
+bak/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*~
+
+# Ruby / Bundler (local install path, if any)
+.bundle/
+vendor/

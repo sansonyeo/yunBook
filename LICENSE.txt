@@ -1,0 +1,4 @@
+<h1 class="header_logo">
+				<a href="../index.html" title="크롤링테스트홈 바로가기"><span class="blind">CRAWING</span></a>
+				<span id="eventImgLogo"></span>
+			</h1>
