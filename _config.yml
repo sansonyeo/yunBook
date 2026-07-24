@@ -8,6 +8,9 @@ baseurl: "/yunBook"
 url: https://sansonyeo.github.io
 google_analytics: 'G-KFVVEDDKRB'
 disqus: ''
+# 카카오톡 공유 버튼. Kakao Developers(https://developers.kakao.com)에서 발급받은
+# JavaScript 키를 입력하면 카카오톡 공유가 활성화됩니다. 비워두면 '링크 복사'로 동작.
+kakao_js_key: '5e9e4cf9d1e1c99657f05719f7e8b4ce'
 # Utterances (GitHub Issues 기반 댓글). repo 에 utterances 앱 설치 필요: https://github.com/apps/utterances
 utterances:
   repo: "sansonyeo/yunBook"

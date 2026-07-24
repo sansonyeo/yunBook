@@ -16,12 +16,39 @@
         </li>
 
         <li class="ml-1 mr-1">
-            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}" onclick="window.open(this.href, 'width=550,height=435');return false;">
-                <i class="fab fa-linkedin-in"></i>
+            <a href="#" class="share-kakao" onclick="shareKakao(); return false;" aria-label="카카오톡 공유">
+                <svg viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" style="vertical-align:-0.125em;">
+                    <path d="M256 48C123.5 48 16 132.3 16 236c0 67.1 44.9 125.9 112.3 159.1-3.6 12.3-23.1 79.6-23.9 84.9 0 0-.2 2 1.1 2.7 1.3.8 2.9.2 2.9.2 7.2-1 83.2-54.4 96.3-63.7 16.4 2.3 33.3 3.5 50.6 3.5 132.5 0 240-84.3 240-188C496 132.3 388.5 48 256 48z"/>
+                </svg>
             </a>
         </li>
 
     </ul>
+
+    <script>
+    function shareKakao() {
+        var shareUrl = {{ page.url | absolute_url | jsonify }};
+        if (window.Kakao && Kakao.isInitialized() && Kakao.Share) {
+            Kakao.Share.sendDefault({
+                objectType: 'feed',
+                content: {
+                    title: {{ page.title | jsonify }},
+                    description: {{ page.description | default: site.description | jsonify }},
+                    imageUrl: {{ page.image | default: site.logo | absolute_url | jsonify }},
+                    link: { mobileWebUrl: shareUrl, webUrl: shareUrl }
+                }
+            });
+        } else {
+            // Kakao SDK 미초기화 시: 링크 복사로 대체
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(shareUrl);
+                alert('링크가 복사되었습니다. 카카오톡에 붙여넣어 공유하세요.');
+            } else {
+                window.prompt('아래 링크를 복사해 카카오톡에 공유하세요:', shareUrl);
+            }
+        }
+    }
+    </script>
     {% if page.comments != false %}
     <div class="sep">
     </div>
